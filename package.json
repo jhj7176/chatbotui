@@ -3,11 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
     "chat": "supabase start && npm run db-types && npm run dev",
-=======
-    "chat": "supabase start && npm run dev",
->>>>>>> c3dda5b (Remove unnecessary command from chat script)
     "restart": "supabase stop && npm run chat",
     "update": "git pull && npm run db-migrate up && npm run db-types",
     "prepare": "husky install",
