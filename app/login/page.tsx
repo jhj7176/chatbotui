@@ -65,18 +65,19 @@ export default async function Login({
       password,
       options: {
         // TODO: USE IF YOU WANT TO SEND EMAIL VERIFICATION, ALSO CHANGE TOML FILE
-        // emailRedirectTo: `${origin}/auth/callback`
+        emailRedirectTo: `${origin}/auth/callback`
       }
     })
 
+    console.log(error)
     if (error) {
+      console.log(error)
       return redirect("/login?message=Could not authenticate user")
     }
-
-    return redirect("/setup")
+//return redirect("/setup")
 
     // TODO: USE IF YOU WANT TO SEND EMAIL VERIFICATION, ALSO CHANGE TOML FILE
-    // return redirect("/login?message=Check email to continue sign in process")
+     return redirect("/login?message=Check email to continue sign in process")
   }
 
   return (
@@ -112,7 +113,7 @@ export default async function Login({
           Login
         </Button>
 
-        <Button
+        <Button id="btn"
           formAction={signUp}
           className="border-foreground/20 mb-2 rounded-md border px-4 py-2"
         >
